@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Create and download a QR code for a link. QR generation happens in your browser."
+    />
+    <title>Link to QR</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script defer src="./assets/vendor/qrcode.min.js"></script>
+    <script defer src="./assets/js/app.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Link to QR</h1>
+      <p class="lede">
+        Paste a link, get a scannable code. Everything runs in your browser, so
+        your links stay with you.
+      </p>
+      <div class="grid">
+        <section class="card" aria-label="Settings">
+          <div class="field">
+            <label for="url">Link</label>
+            <input
+              id="url"
+              type="text"
+              inputmode="url"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="github.com/your-name/your-repo"
+            />
+            <p class="hint" id="hint"></p>
+          </div>
+          <div class="row field">
+            <div>
+              <label for="size">Size</label>
+              <select id="size">
+                <option value="256">256 px</option>
+                <option value="512" selected>512 px</option>
+                <option value="1024">1024 px</option>
+                <option value="2048">2048 px</option>
+              </select>
+            </div>
+            <div>
+              <label for="ec">Error correction</label>
+              <select id="ec">
+                <option value="L">Low (7%)</option>
+                <option value="M" selected>Medium (15%)</option>
+                <option value="Q">Quartile (25%)</option>
+                <option value="H">High (30%)</option>
+              </select>
+            </div>
+          </div>
+          <div class="colors">
+            <label>
+              Code color
+              <input id="fg" type="color" value="#14213d" />
+            </label>
+            <label>
+              Background
+              <input id="bg" type="color" value="#ffffff" />
+            </label>
+          </div>
+          <p class="hint">
+            Keep strong contrast and a dark code on a light background for the
+            most reliable scans.
+          </p>
+        </section>
+
+        <section class="card preview" aria-label="Preview">
+          <div class="frame" id="frame">
+            <p class="empty" id="empty">Your QR code will appear here.</p>
+            <canvas id="cv" hidden></canvas>
+          </div>
+          <div class="actions">
+            <button class="primary" id="png" disabled>Download PNG</button>
+            <button class="ghost" id="svg" disabled>Download SVG</button>
+            <button class="ghost" id="copy" disabled>Copy image</button>
+          </div>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
