@@ -15,14 +15,13 @@ assets/
     LICENSE
 ```
 
-## Add the QR library
+## QR library
 
-`assets/vendor/qrcode.min.js` must contain the browser-ready `qrcode-generator`
-1.4.4 build. The checked-in placeholder may be empty; the app will show an error
-until the actual library is added. Obtain the build from the
-[qrcode-generator project](https://github.com/kazuhikoarase/qrcode-generator),
-verify its version and source, and place its license text in
-`assets/vendor/LICENSE`. Do not substitute a file from an untrusted source.
+`assets/vendor/qrcode.min.js` contains the browser-ready `qrcode-generator`
+1.4.4 build. The build was obtained from the [qrcode-generator project]
+(https://github.com/kazuhikoarase/qrcode-generator). Before adding the library, 
+verify its version and source, and place its license text in `assets/vendor/LICENSE`. 
+Do not substitute a file from an untrusted source.
 
 ## Run locally
 
