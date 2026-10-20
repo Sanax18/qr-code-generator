@@ -29,9 +29,3 @@ verify its version and source, and place its license text in
 Serve the repository root with any static HTTP server and open its URL. This is
 also useful for testing clipboard access, which browsers generally restrict on
 insecure origins and local files.
-
-## Publish on GitHub Pages
-
-Push the repository, then select the branch and repository root under
-**Settings → Pages**. `index.html` is the site entry point. Asset URLs are
-relative so they work both at the domain root and under a repository path.
